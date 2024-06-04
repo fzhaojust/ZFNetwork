@@ -1,6 +1,8 @@
 # ZFNetwork
 iOS可用的网络框架
 
+集约型方式：response通过block方式获取
+
 参考
 
 https://cloud.tencent.com/developer/article/1415125
