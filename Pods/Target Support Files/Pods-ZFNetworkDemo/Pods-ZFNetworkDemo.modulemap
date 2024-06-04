@@ -1,0 +1,6 @@
+framework module Pods_ZFNetworkDemo {
+  umbrella header "Pods-ZFNetworkDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
