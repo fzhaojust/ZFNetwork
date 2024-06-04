@@ -355,6 +355,7 @@ pthread_mutex_unlock(&self->_lock); \
     if ([self respondsToSelector:@selector(zf_preprocessParameter:)]) {
         parameter = [self zf_preprocessParameter:parameter];
     }
+    return parameter;
 }
 
 #pragma mark - getter

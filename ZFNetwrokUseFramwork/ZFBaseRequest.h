@@ -48,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma - 回调代理
 @property (nonatomic, weak) id<ZFResponseDelegate> delegate;
 
-
+@property (nonatomic, strong, readonly) ZFNetworkCache *cacheHandler;
 #pragma - 其他
 @property (nonatomic, assign) NetworkReleaseStrategy releaseStrategy;
 
@@ -96,7 +96,7 @@ NS_ASSUME_NONNULL_BEGIN
  2、直接调用 clearRequestBlocks 清空回调闭包。
  */
 
-- (void)zf_redirection:(void(^)(NetworkRedirection))redirection response:(ZFNetworkReponse *)response;
+- (void)zf_redirection:(void(^)(NetworkRequestRedirection))redirection response:(ZFNetworkReponse *)response;
 
 /** 预处理请求成功数据 (子线程执行, 若数据来自缓存在主线程执行) */
 - (void)zf_preprocessSuccessInChildThreadWithResponse:(ZFNetworkReponse *)response;

@@ -29,7 +29,8 @@
 
 - (void)clickButton
 {
-    [self.navigationController pushViewController:NetworkTestViewController.new animated:YES];
+//    [self.navigationController pushViewController:[[NetworkTestViewController alloc] init] animated:YES];
+    [self presentViewController:[[NetworkTestViewController alloc] init] animated:YES completion:nil];
 }
 
 

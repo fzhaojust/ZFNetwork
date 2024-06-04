@@ -73,8 +73,8 @@ typedef NS_ENUM(NSInteger, NetworkRequestRedirection) {
 
 typedef void(^ZFRequestProgressBlock)(NSProgress *progress);
 typedef void(^ZFRequestCacheBlock)(ZFNetworkReponse *progress);
-typedef void(^ZFRequestSuccessBlock)(ZFNetworkReponse *progress);
-typedef void(^ZFRequestFailureBlock)(ZFNetworkReponse *progress);
+typedef void(^ZFRequestSuccessBlock)(ZFNetworkReponse *response);
+typedef void(^ZFRequestFailureBlock)(ZFNetworkReponse *response);
 
 @protocol ZFResponseDelegate <NSObject>
 

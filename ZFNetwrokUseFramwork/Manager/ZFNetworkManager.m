@@ -65,7 +65,34 @@ pthread_mutex_unlock(&self->_lock); \
 }
 - (NSNumber *)startNetworkingWithRequest:(ZFBaseRequest *)request uploadProgress:(nullable ZFRequestProgressBlock)uploadProgress downloadProgress:(nullable ZFRequestProgressBlock)downloadProgress completion:(nullable ZfRequestCompletionBlock)completion
 {
+    //搭建网络请求流程
     
+    NSString *method = [request requestMethodString];
+    AFHTTPRequestSerializer *serializer = [self requestSerializerForrequest:request];
+    NSString *URLString = [request validRequestURLString];
+    id parameter = [request validRequestParameter];
+    NSError *error = nil;
+    NSMutableURLRequest *URLRequest = nil;
+    if (request.requestConstructingBody) {
+        URLRequest = [serializer multipartFormRequestWithMethod:@"POST" URLString:URLString parameters:parameter constructingBodyWithBlock:request.requestConstructingBody error:&error];
+    } else {
+        URLRequest = [serializer requestWithMethod:method URLString:URLString parameters:parameter error:&error];
+        
+    }
+    if (error) {
+        if (completion) {
+            completion([ZFNetworkReponse responseWithSessionTask:nil responseObject:nil error:error]);
+            return nil;
+        }
+    }
+    
+    //发起请求
+    AFHTTPSessionManager *manager = [self sessionManagerForRequest:request];
+    if (request.downloadPath.length > 0) {
+        return [self startDownloadTaskwithManager:manager URLRequest:URLRequest downloadPath:request.downloadPath downloadProgress:downloadProgress completion:completion];
+    } else {
+        return [self startDataTaskWithManager:manager URLRequest:URLRequest uploadProgress:uploadProgress downloadProgress:downloadProgress completion:completion];
+    }
 }
 
 #pragma mark -- private
@@ -143,9 +170,10 @@ pthread_mutex_unlock(&self->_lock); \
 #pragma mark - read info from request
 - (AFHTTPRequestSerializer *)requestSerializerForrequest:(ZFBaseRequest *)request
 {
-    AFHTTPRequestSerializer *serializer = [AFJSONRequestSerializer serializer];
-    
-    
+    AFHTTPRequestSerializer *serializer = request.requestSerializer ?: [AFJSONRequestSerializer serializer];
+    if (request.requestTimeoutInterval > 0) {
+        serializer.timeoutInterval = request.requestTimeoutInterval;
+    }
     return serializer;
 }
 - (AFHTTPSessionManager *)sessionManagerForRequest:(ZFBaseRequest *)request

@@ -12,6 +12,8 @@
 		2B3283C02C089BB9001C382C /* ZFNetworkReponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3283BF2C089BB9001C382C /* ZFNetworkReponse.m */; };
 		2B3283C32C089DF2001C382C /* ZFNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3283C22C089DF2001C382C /* ZFNetworkManager.m */; };
 		2B3287802C0DA5A5001C382C /* ZFNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B32877F2C0DA5A5001C382C /* ZFNetworkCache.m */; };
+		2B3287862C0EC046001C382C /* DefaultServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3287852C0EC046001C382C /* DefaultServerRequest.m */; };
+		2B3287892C0EC07F001C382C /* ZFNetworkReponse+ZFCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3287882C0EC07F001C382C /* ZFNetworkReponse+ZFCustom.m */; };
 		2B873A5A2C08567D0011143F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B873A592C08567D0011143F /* AppDelegate.m */; };
 		2B873A5D2C08567D0011143F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B873A5C2C08567D0011143F /* SceneDelegate.m */; };
 		2B873A602C08567D0011143F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B873A5F2C08567D0011143F /* ViewController.m */; };
@@ -38,6 +40,10 @@
 		2B32877F2C0DA5A5001C382C /* ZFNetworkCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFNetworkCache.m; sourceTree = "<group>"; };
 		2B3287812C0DA9EB001C382C /* ZFNetworkCache+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZFNetworkCache+Internal.h"; sourceTree = "<group>"; };
 		2B3287832C0DAFD5001C382C /* ZFBaseRequest+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZFBaseRequest+Internal.h"; sourceTree = "<group>"; };
+		2B3287842C0EC046001C382C /* DefaultServerRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultServerRequest.h; sourceTree = "<group>"; };
+		2B3287852C0EC046001C382C /* DefaultServerRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefaultServerRequest.m; sourceTree = "<group>"; };
+		2B3287872C0EC07F001C382C /* ZFNetworkReponse+ZFCustom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZFNetworkReponse+ZFCustom.h"; sourceTree = "<group>"; };
+		2B3287882C0EC07F001C382C /* ZFNetworkReponse+ZFCustom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ZFNetworkReponse+ZFCustom.m"; sourceTree = "<group>"; };
 		2B873A552C08567D0011143F /* ZFNetworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZFNetworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B873A582C08567D0011143F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2B873A592C08567D0011143F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -115,6 +121,10 @@
 		2B327FFC2C0883F5001C382C /* APITest */ = {
 			isa = PBXGroup;
 			children = (
+				2B3287842C0EC046001C382C /* DefaultServerRequest.h */,
+				2B3287852C0EC046001C382C /* DefaultServerRequest.m */,
+				2B3287872C0EC07F001C382C /* ZFNetworkReponse+ZFCustom.h */,
+				2B3287882C0EC07F001C382C /* ZFNetworkReponse+ZFCustom.m */,
 			);
 			path = APITest;
 			sourceTree = "<group>";
@@ -297,6 +307,8 @@
 				2B3283C02C089BB9001C382C /* ZFNetworkReponse.m in Sources */,
 				2B3283C32C089DF2001C382C /* ZFNetworkManager.m in Sources */,
 				2B327FFF2C08842C001C382C /* NetworkTestViewController.m in Sources */,
+				2B3287862C0EC046001C382C /* DefaultServerRequest.m in Sources */,
+				2B3287892C0EC07F001C382C /* ZFNetworkReponse+ZFCustom.m in Sources */,
 				2B873A5A2C08567D0011143F /* AppDelegate.m in Sources */,
 				2B873A6B2C08567E0011143F /* main.m in Sources */,
 				2B3283BD2C089B61001C382C /* ZFBaseRequest.m in Sources */,
